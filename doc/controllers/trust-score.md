@@ -1,0 +1,612 @@
+# Trust Score
+
+```ts
+const trustScoreApi = new TrustScoreApi(client);
+```
+
+## Class Name
+
+`TrustScoreApi`
+
+## Methods
+
+* [Trust Score Detailed](../../doc/controllers/trust-score.md#trust-score-detailed)
+* [Check Transaction Allowed](../../doc/controllers/trust-score.md#check-transaction-allowed)
+
+
+# Trust Score Detailed
+
+### Overview
+
+Paysecure TrustScore's proprietary API combines email, phone number, IP and URL so that you can request and receive a user trust score from our enriched data, rules, and scoring in a single API call.
+
+Our take on Trust is different from the usual approach to fraud. This API tells you how much you can trust this user. It’s based on 100+ data points to which we have access. We use complex algorithms based on data sanity and customer behaviour in our partner network.
+
+Also, the additional optional parameter would be used to boost the accuracy of our response. So the more data we get the better we can ascertain the users' trust. So please endeavour to send as much information about the user as possible.
+
+### **Trust Score & Usage**
+
+TrustScore offers two distinct endpoints: `General` and `Detailed`.
+
+The General endpoint provides basic information by indicating whether a transaction is permitted or not. It gives a simple 'yes' or 'no' response regarding whether the transaction can proceed.
+
+On the other hand, the Detailed endpoint offers a more comprehensive evaluation. It furnishes an in-depth analysis of the transaction's authenticity, providing a detailed assessment beyond a simple allowance or denial, offering nuanced insights and information about the transaction's legitimacy.
+
+### Detailed TrustScore
+
+Trust scores range from 0 to 5. A trust score of 0 indicates that we have limited information about the user, and it corresponds to the lowest level of trust. In addition to the TrustScore, we offer eight other flags to help assess the user's overall profile and determine appropriate actions to take. We suggest flagging or blocking users, transactions, or clicks as high risk based on a combination of the following factors: email deliverability, proxy usage, VPN usage, Tor usage, and recent abusive behavior.
+
+Every company has a unique target audience, so you might achieve better results by only flagging or blocking entities with low trust scores and recent instances of abuse. Keep in mind that mobile IP addresses are frequently misused and recycled by mobile carriers. Therefore, for mobile lookups, we advise giving more weight to the trust score, VPN usage, and Tor usage, as opposed to proxy usage.
+
+### **Permission**
+
+Access to this API has to be given to you by the admin. So please contact your sales representative at PaySecure to get access to this API, if you get a 401 error of "You are not allowed to call this API service".
+
+### Mandatory Parameters (in body)
+
+| **Parameters** | **Description** |
+| --- | --- |
+| ip | IP of the user. Both IP4 and IP6 are valid |
+| email | The email id of the user you want to trust score on |
+| url | The URL on which the user is trying to purchase or consume a product, service or data. |
+
+### Other optional paramters:
+
+The optional parameters are self-explanatory and appropriate values can be given in string format.
+
+| **Parameters** | **Values** |
+| --- | --- |
+| last_bets | String |
+| last_wins | String |
+| total_bonuses | String |
+| last_real_bets | String |
+| last_real_wins | String |
+| total_deposits | String |
+| last_bonus_bets | String |
+| last_bonus_wins | String |
+| average_real_bet | String |
+| last_bets_amount | String |
+| last_wins_amount | String |
+| average_bonus_bet | String |
+| bonus_to_deposits | String |
+| last_deposit_date | String |
+| total_withdrawals | String |
+| is_phone_confirmed | String |
+| money_in_money_out | String |
+| last_deposit_amount | String |
+| last_freespins_date | String |
+| last_freespins_name | String |
+| last_free_bonus_date | String |
+| last_free_bonus_name | String |
+| total_bonuses_amount | String |
+| last_freespins_amount | String |
+| last_freespins_status | String |
+| last_real_bets_amount | String |
+| last_real_wins_amount | String |
+| total_deposits_amount | String |
+| last_bonus_bets_amount | String |
+| last_bonus_wins_amount | String |
+| last_free_bonus_amount | String |
+| last_free_bonus_status | String |
+| last_deposit_bonus_date | String |
+| last_deposit_bonus_name | String |
+| last_freespins_currency | String |
+| last_freespins_wagering | String |
+| withdrawals_to_deposits | String |
+| last_free_bonus_currency | String |
+| last_free_bonus_wagering | String |
+| total_withdrawals_amount | String |
+| withdrawal_ewallet_email | String |
+| last_deposit_bonus_amount | String |
+| last_deposit_bonus_status | String |
+| last_deposit_bonus_currency | String |
+| last_deposit_bonus_wagering | String |
+| session | String |
+| payment_mode | String |
+| card_fullname | String |
+| card_bin | String |
+| card_hash | String |
+| card_last | String |
+| card_expire | String |
+| avs_result | String |
+| cvv_result | String |
+| sca_method | String |
+| user_bank_account | String |
+| user_bank_name | String |
+| user_balance | String |
+| user_verification_level | String |
+| status_3d | String |
+| regulation | String |
+| payment_provider | String |
+| phone_number | String |
+| transaction_type | String |
+| transaction_amount | String |
+| transaction_currency | String |
+| merchant_id | String |
+| details_url | String |
+| name | String |
+| person_type | String |
+| gender | String |
+
+### Response
+
+In the response examples, you can observe both instances of a successful TrustScore response and an unsuccessful one.
+
+Please note that there are a lot of parameters to determine the trust level and give you some additional details on the email and IP of the user.
+
+in a successful trust score call the following data would be provided:
+
+| **Response Item** | **Description** | **Possible Values** |
+| --- | --- | --- |
+| trustScore | The trust score attributed to the user by our algorithms | Integer 0 to 5 |
+| deliverable | Whether the email is deliverable, usually false means it wouldn't be a trustable user. | **Boolean** |
+| proxy | Is this IP address suspected to be a proxy? (SOCKS, Elite, Anonymous, VPN, Tor, etc.) | **Boolean** |
+| vpn | Is this IP suspected of being a VPN connection? This can include data center ranges which can become active VPNs at any time. The "proxy" status will always be true when this value is true. | **Boolean** |
+| tor | Is this IP suspected of being a TOR connection? This can include previously active TOR nodes and exits which can become active TOR exits at any time. The "proxy" status will always be true when this value is true. | **Boolean** |
+| active_vpn | Identifies active VPN connections used by popular VPN services and private VPN servers. | **Boolean** |
+| active_tor | Identifies active TOR exits on the TOR network. | **Boolean** |
+| recent_abuse | This value indicates whether the IP address has been associated with any recently verified abuse on our network, such as a confirmed chargeback, compromised device, or fake app install. | **Boolean** |
+| bot_status | Shows whether bots or non-human traffic recently used this IP address to engage in automated fraud. This provides strong evidence that the IP address is suspicious. | **Boolean** |
+
+### Errors
+
+If there are any errors then it'll be in the format of :
+
+```json
+{
+    "message": "descriptive error message",
+    "code": "error_code"
+}
+
+```
+
+### Possible Error Messages
+
+the possible error codes one can get on calling this APIs are:
+
+| **Code** |
+| --- |
+| 400, 404, 401, 415, 405 |
+
+for example:
+
+| **Code** | **Error Messages** |
+| --- | --- |
+| 401 | Incorrect secret_key |
+| 401 | You are not Allowed to call this API service |
+
+:information_source: **Note** This endpoint does not require authentication.
+
+```ts
+async trustScoreDetailed(
+  body: TrustScoreDetailedRequest,
+  requestOptions?: RequestOptions
+): Promise<ApiResponse<TrustScoreExists>>
+```
+
+## Parameters
+
+| Parameter | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `body` | [`TrustScoreDetailedRequest`](../../doc/models/trust-score-detailed-request.md) | Body, Required | - |
+| `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
+
+## Response Type
+
+**202**
+
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [`TrustScoreExists`](../../doc/models/trust-score-exists.md).
+
+## Example Usage
+
+```ts
+const body: TrustScoreDetailedRequest = {
+  requiredinput: {
+    ip: '111.11.11.11',
+    email: 'test@gmail.com',
+    url: 'https://www.asos.com/',
+  },
+  optionalInput: {
+    lastBets: 'last_bets2',
+    lastWins: '',
+    totalBonuses: '',
+    lastRealBets: '',
+    lastRealWins: '',
+    totalDeposits: '',
+    lastBonusBets: '',
+    lastBonusWins: '',
+    averageRealBet: '',
+    lastBetsAmount: '',
+    lastWinsAmount: '',
+    averageBonusBet: '',
+    bonusToDeposits: '',
+    lastDepositDate: '',
+    totalWithdrawals: '',
+    isPhoneConfirmed: '',
+    moneyInMoneyOut: '',
+    lastDepositAmount: '',
+    lastFreespinsDate: '',
+    lastFreespinsName: '',
+    lastFreeBonusDate: '',
+    lastFreeBonusName: '',
+    totalBonusesAmount: '',
+    lastFreespinsAmount: '',
+    lastFreespinsStatus: '',
+    lastRealBetsAmount: '',
+    lastRealWinsAmount: '',
+    totalDepositsAmount: '',
+    lastBonusBetsAmount: '',
+    lastBonusWinsAmount: '',
+    lastFreeBonusAmount: '',
+    lastFreeBonusStatus: '',
+    lastDepositBonusDate: '',
+    lastDepositBonusName: '',
+    lastFreespinsCurrency: '',
+    lastFreespinsWagering: '',
+    withdrawalsToDeposits: '',
+    lastFreeBonusCurrency: '',
+    lastFreeBonusWagering: '',
+    totalWithdrawalsAmount: '',
+    withdrawalEwalletEmail: '',
+    lastDepositBonusAmount: '',
+    lastDepositBonusStatus: '',
+    lastDepositBonusCurrency: '',
+    lastDepositBonusWagering: '',
+    session: '',
+    paymentMode: '',
+    cardFullname: '',
+    cardBin: '',
+    cardHash: '',
+    cardLast: '',
+    cardExpire: '',
+    avsResult: '',
+    cvvResult: '',
+    scaMethod: '',
+    userBankAccount: '',
+    userBankName: '',
+    userBalance: '',
+    userVerificationLevel: '',
+    status3D: '',
+    regulation: '',
+    paymentProvider: '',
+    phoneNumber: '',
+    transactionType: '',
+    transactionAmount: '',
+    transactionCurrency: '',
+    merchantId: '',
+    detailsUrl: '',
+    name: '',
+    personType: '',
+    gender: '',
+  },
+};
+
+try {
+  const response = await trustScoreApi.trustScoreDetailed(body);
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
+} catch (error) {
+  if (error instanceof ApiError) {
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof TrustScoreError) {
+      console.log(error.result);
+    }
+  }
+}
+```
+
+## Example Response *(as JSON)*
+
+```json
+{
+  "trustScore": 0,
+  "deliverable": "false",
+  "proxy": "false",
+  "vpn": "false",
+  "tor": "false",
+  "active_vpn": "false",
+  "active_tor": "false",
+  "recent_abuse": "false",
+  "bot_status": "false"
+}
+```
+
+## Errors
+
+| HTTP Status Code | Error Description | Exception Class |
+|  --- | --- | --- |
+| 401 | Unauthorized | [`TrustScoreError`](../../doc/models/trust-score-error.md) |
+
+
+# Check Transaction Allowed
+
+### General TrustScore
+
+Request for the checkTransactionAllowed endpoint is identical to the TrustScore API. Only thing different is the response. Instead of detailed score, this endpoint only returns `transactionAllowed` parameter that can have either `YES` or `NO` value.
+
+### **Permission**
+
+Access to this API has to be given to you by the admin. So please contact your sales representative at Paysecure to get access to this API, if you get a 401 error of "You are not allowed to call this API service".
+
+### Mandatory Parameters (in body)
+
+| **Parameters** | **Description** |
+| --- | --- |
+| ip | IP of the user. Both IP4 and IP6 are valid |
+| email | The email id of the user you want to trust score on |
+| url | The URL on which the user is trying to purchase or consume a product, service or data. |
+
+### Other optional paramters:
+
+The optional parameters are self-explanatory and appropriate values can be given in string format.
+
+| **Parameters** | **Values** |
+| --- | --- |
+| last_bets | String |
+| last_wins | String |
+| total_bonuses | String |
+| last_real_bets | String |
+| last_real_wins | String |
+| total_deposits | String |
+| last_bonus_bets | String |
+| last_bonus_wins | String |
+| average_real_bet | String |
+| last_bets_amount | String |
+| last_wins_amount | String |
+| average_bonus_bet | String |
+| bonus_to_deposits | String |
+| last_deposit_date | String |
+| total_withdrawals | String |
+| is_phone_confirmed | String |
+| money_in_money_out | String |
+| last_deposit_amount | String |
+| last_freespins_date | String |
+| last_freespins_name | String |
+| last_free_bonus_date | String |
+| last_free_bonus_name | String |
+| total_bonuses_amount | String |
+| last_freespins_amount | String |
+| last_freespins_status | String |
+| last_real_bets_amount | String |
+| last_real_wins_amount | String |
+| total_deposits_amount | String |
+| last_bonus_bets_amount | String |
+| last_bonus_wins_amount | String |
+| last_free_bonus_amount | String |
+| last_free_bonus_status | String |
+| last_deposit_bonus_date | String |
+| last_deposit_bonus_name | String |
+| last_freespins_currency | String |
+| last_freespins_wagering | String |
+| withdrawals_to_deposits | String |
+| last_free_bonus_currency | String |
+| last_free_bonus_wagering | String |
+| total_withdrawals_amount | String |
+| withdrawal_ewallet_email | String |
+| last_deposit_bonus_amount | String |
+| last_deposit_bonus_status | String |
+| last_deposit_bonus_currency | String |
+| last_deposit_bonus_wagering | String |
+| session | String |
+| payment_mode | String |
+| card_fullname | String |
+| card_bin | String |
+| card_hash | String |
+| card_last | String |
+| card_expire | String |
+| avs_result | String |
+| cvv_result | String |
+| sca_method | String |
+| user_bank_account | String |
+| user_bank_name | String |
+| user_balance | String |
+| user_verification_level | String |
+| status_3d | String |
+| regulation | String |
+| payment_provider | String |
+| phone_number | String |
+| transaction_type | String |
+| transaction_amount | String |
+| transaction_currency | String |
+| merchant_id | String |
+| details_url | String |
+| name | String |
+| person_type | String |
+| gender | String |
+
+### Response
+
+Response contains a single parameter: `transactionAllowed` which can either be `YES` or `NO` .
+
+```json
+{
+"transactionAllowed" : "YES"
+}
+
+```
+
+If there are any errors then it'll be in the format of :
+
+```json
+{
+    "message": "descriptive error message",
+    "code": "error_code"
+}
+
+```
+
+### Possible Error Messages
+
+the possible error codes one can get on calling this APIs are:
+
+| **Code** |
+| --- |
+| 400, 404, 401, 415, 405 |
+
+for example:
+
+| **Code** | **Error Messages** |
+| --- | --- |
+| 401 | Incorrect secret_key |
+| 401 | You are not Allowed to call this API service |
+
+:information_source: **Note** This endpoint does not require authentication.
+
+```ts
+async checkTransactionAllowed(
+  body: CheckTransactionAllowedRequest,
+  requestOptions?: RequestOptions
+): Promise<ApiResponse<TrustScoreExists1>>
+```
+
+## Parameters
+
+| Parameter | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `body` | [`CheckTransactionAllowedRequest`](../../doc/models/check-transaction-allowed-request.md) | Body, Required | - |
+| `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
+
+## Response Type
+
+**202**
+
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `result` property of this instance returns the response data which is of type [`TrustScoreExists1`](../../doc/models/trust-score-exists-1.md).
+
+## Example Usage
+
+```ts
+const body: CheckTransactionAllowedRequest = {
+  requiredinput: {
+    ip: '111.11.11.11',
+    email: 'test@gmail.com',
+    url: 'https://www.asos.com/',
+  },
+  optionalInput: {
+    lastBets: 'last_bets2',
+    lastWins: '',
+    totalBonuses: '',
+    lastRealBets: '',
+    lastRealWins: '',
+    totalDeposits: '',
+    lastBonusBets: '',
+    lastBonusWins: '',
+    averageRealBet: '',
+    lastBetsAmount: '',
+    lastWinsAmount: '',
+    averageBonusBet: '',
+    bonusToDeposits: '',
+    lastDepositDate: '',
+    totalWithdrawals: '',
+    isPhoneConfirmed: '',
+    moneyInMoneyOut: '',
+    lastDepositAmount: '',
+    lastFreespinsDate: '',
+    lastFreespinsName: '',
+    lastFreeBonusDate: '',
+    lastFreeBonusName: '',
+    totalBonusesAmount: '',
+    lastFreespinsAmount: '',
+    lastFreespinsStatus: '',
+    lastRealBetsAmount: '',
+    lastRealWinsAmount: '',
+    totalDepositsAmount: '',
+    lastBonusBetsAmount: '',
+    lastBonusWinsAmount: '',
+    lastFreeBonusAmount: '',
+    lastFreeBonusStatus: '',
+    lastDepositBonusDate: '',
+    lastDepositBonusName: '',
+    lastFreespinsCurrency: '',
+    lastFreespinsWagering: '',
+    withdrawalsToDeposits: '',
+    lastFreeBonusCurrency: '',
+    lastFreeBonusWagering: '',
+    totalWithdrawalsAmount: '',
+    withdrawalEwalletEmail: '',
+    lastDepositBonusAmount: '',
+    lastDepositBonusStatus: '',
+    lastDepositBonusCurrency: '',
+    lastDepositBonusWagering: '',
+    session: '',
+    paymentMode: '',
+    cardFullname: '',
+    cardBin: '',
+    cardHash: '',
+    cardLast: '',
+    cardExpire: '',
+    avsResult: '',
+    cvvResult: '',
+    scaMethod: '',
+    userBankAccount: '',
+    userBankName: '',
+    userBalance: '',
+    userVerificationLevel: '',
+    status3D: '',
+    regulation: '',
+    paymentProvider: '',
+    phoneNumber: '',
+    transactionType: '',
+    transactionAmount: '',
+    transactionCurrency: '',
+    merchantId: '',
+    detailsUrl: '',
+    name: '',
+    personType: '',
+    gender: '',
+  },
+};
+
+try {
+  const response = await trustScoreApi.checkTransactionAllowed(body);
+
+  // Extracting fully parsed response body.
+  console.log(response.result);
+
+  // Extracting response status code.
+  console.log(response.statusCode);
+  // Extracting response headers.
+  console.log(response.headers);
+  // Extracting response body of type `string | Stream`
+  console.log(response.body);
+} catch (error) {
+  if (error instanceof ApiError) {
+    // Extracting response error status code.
+    console.log(error.statusCode);
+    // Extracting response error headers.
+    console.log(error.headers);
+    // Extracting response error body of type `string | Stream`.
+    console.log(error.body);
+    if (error instanceof TrustScoreError) {
+      console.log(error.result);
+    }
+  }
+}
+```
+
+## Example Response *(as JSON)*
+
+```json
+{
+  "transactionAllowed": "YES"
+}
+```
+
+## Errors
+
+| HTTP Status Code | Error Description | Exception Class |
+|  --- | --- | --- |
+| 401 | Unauthorized | [`TrustScoreError`](../../doc/models/trust-score-error.md) |
+

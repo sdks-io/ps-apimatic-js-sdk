@@ -1,0 +1,37 @@
+
+# Pay in Details 10
+
+*This model accepts additional fields of type unknown.*
+
+## Structure
+
+`PayInDetails10`
+
+## Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `qrCode` | `string` | Required | - |
+| `gpayUri` | `string` | Required | - |
+| `phonepeUri` | `string` | Required | - |
+| `paytmUri` | `string` | Required | - |
+| `generatedLink` | `string` | Required | - |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
+
+## Example
+
+```ts
+import { PayInDetails10 } from 'ps-apimatic-sdk';
+
+const payInDetails10: PayInDetails10 = {
+  qrCode: 'iVBORw0KGgoAAAANSUhEUgAAAb0AAAG9AQAAAACpVZXpAAAH7UlEQVR4nO1cQY7qSgw0yiJLjpCbJBdDIhIXg5vkCCyzQPi7qtwkM2/zNcsYpIfeQFcvTNtdLtsx/9trtS/wC/wCv8A/AZ9mdnpevb9bt6zj+TWso3Uen17i33nGkgverotN/orP7FoHeHV/AG1nfnoZ+kfYrcdKv8ei/gEMvljxRkQZ4MVi5Ww2nm9LbBF/xnLYd7YVVu3dZ262hPUvA3+CUsCnDesJ39/PHhidtlg5cRFek9+WtSgwPO595ldGI4dTAohX/8ZpG2Hp8MdiQPnjEL7XIWJdEae6BfvgC0SxCGCx2Q2fvf5x5GMDGckRov7X2+8r4NhAvW6O82QrHBBeuGBHHjSHK7rDtDxtv8jD0YERv8PPwAHcRjogbv43/BF/wuZwytgHO9r4serxgbIg7vvzPNALY1GHzXDrwYJji2JgTsvOkY8PxGnDDYeVsPHcYjWoUtx6jF04cjPsa8PmjxWAroMWUbtbdPPHPuGZsOqdX8SfOJXGu26zagVgLILHraTWvOUDjRuuU4jq4a2xj8y9hLd6HaArFcMtD997gVoHJYCRwa8H2HzgWVxBDkoBxR5lraVHxIpgdWXEcjJKHrmw+S2Z071F8gLA+JSGCkwEbISoOFnJHiNtvSAhgc0RpyKmw/BeBqgUFUcJGIPWAZnjY1VXis+bUMdw93McHph0kXedfA/pBfMx5CKLlJCJ9n3+FEkOD1QSiuUyrSWaQfyuc0eS3UElm+m8ZYDNqrCbkQMgMMGWEcCQhdEB6a1Jsps/VgCGybASWTtOFu1Lz8SlD/lsgheepBXFupaUFQEiC4MXzozaRjYQrnhRAksioORDbx8doAAQkfwM3qzrP4MVI3lwRqeEOEgTgc37eyVg5zxFZNAuboR0HlkY5VZdbszbELtk6SpAk/DV44yBB2H5zFSWgR3KPAkSKIHZT3nt6EA4INgPmKJRim/1L1MljKI8zS0NbSwElG5qrX6DwsQkDQh5Kr91prI3V4jfqHUBYKfKH9jPQPbDCpchTkmop/xzgiYi9dULASm2863TQeuxGYuDYVUzmtFOm3tuxaDjA+Fi0AehAZFB0zOpfxikD4Uo7YOw9SFIBYAqkN4UyRnY4ZnNFWnfVlpX7WeTEI8PBGWepDvLZCDPopBZOQVVgj+CCNwaaaoBxP8p/zDloN5jZI/sQABGeYe7ctftyBUAPpmmozqBpAyZ/ArxmXmqfJTqIZVWbLGJJBWAtCXqN8rCqIN1rqh9N0qIs84dGzU2raMAkPEbJjMWt85atJg1fZXZhm7CURyqDvCpWpejnUci4QrxmWSSVQwqRGwT47qdEFQBOPCWpxeCPBulsl55KiyIOM96hiLWw+sAndSQB+1KqQxnjEBmIC+xb2NNjFnJp95RASjimEViKtAiTWoEM1bf1YHK2vKOPR4fiJuLyrIZuk0hNOP6Z9McsxJk8gsJEm44sYEqQHaghvF4fQk9ch+9MXR3aOdRJA9KsJVKDw9k1FbDE1WyiOkUghiwSQlQycmyz5mCRyWgZxAyFU2dJJvxm59RsgerlmS/XXMFgOzfYU3H1OFuSlaRnq288JyuyL5dhLJPB0IBIBa9mbCrOYxaqkqlqPwhlcU1B89Ud/wnklcABjdCmi4dEcoyo1Nrt2yVsDGrGGpqrgNUqY8siQblQXMeOcZv6Ijr1LpYdjWd4wM9h2yYcanE02gRxY3WmSHSxBKP1wFK4NFVz0i0jZUwO2Viz3PHA7nrfD4+8MlRLCRl4NITs42WxPdZxKGQdpXSah/aWQDo5IcJVB2ZhBrHi0UcmjY7eH/8HAWAraaTxMfSAU1ah9E9L8pAVD6tBGQnt/h1bMFGg3fLMdjUwvaMNfMOzCJtR+7wQPWucKBmZjjnV61DjJtxXkJpiO1qOhWAOV/TYhKcUpM2F91rxqGJVrHYdXcXAPIA5dDsIPXwnUZWOxRpgrMjEzORW8GrAnDO4tbE8QnORrCfBeeOMvSk3h/LLR6FgNtIIyui1OglaTAhYXNYamicufGdIx8eqFz9ZTkMYWy8dA1vqRp4Ir/2WcLINlBQAPgkIWQQz0c8OFvlkl8zA5lzGAeHz9+FgO6ii+y9QCRSowHdTtH9xOZTjWBn6asKUK2VvtBaUuFH+R62oAZkObLfKzM71wHCqhyVaFPpIs/emndV+mLfBmtivv85Dg9kAwajE+K3kg8lpq3YA0dlY48GAM+FgDklq7wDoVtUaVT/e/YdJDdiUcPrAHmeFJhemkBKMunZ/y6nZDeYGMKmzB8eCBshHW1T6VhuqdabzmI+P2Tpm1OWAWoei88uSBV+o9G7eimfN4O0f9e/enyg9PgL5Xk9tqDP9OKmKilbCNU0dxL6Wgr4aOlo/yGOagQ7yeZqwYRnXndlxArAnNHfRvbzXlML5ktJmWdij2rgsxAQVlVJMF2xaUCcGuUH6n9SpX3f9XR8IF7qQIiTlUWcznXf5/CRZfflqIGuaxkgDEVqaOyX4+VmnNvic2SyTCi5VRWfdgVUAF5dUVtj6KrpwL545dMX7TNg/LMaeHygnr7YxNM2JcEvVOLJrISKolk9oPpxW7ep+JJodLJqnkpN9Vs1IFxsarqzpLKHsrUXGaW1+vrFfj3w8+BA+iOHA1omrxbCJ9F67IP2oUK04+QFgC2Sq8U7x5CGTyVsaL3LLjIp9ywC/NPrC/wCv8Av8C/A/wCpreUSrYyOqQAAAABJRU5ErkJggg==',
+  gpayUri: 'gpay://upi/pay?ver=01&mode=15&am=5.00&mam=1.00&cu=INR&pa=npstpay@timecosmos&pn=NPST%20PAY&mc=6012&tr=NPST040120220010&tn=QR%20SIT%20testing&mid=NPSTPAY001&msid=NPSTPAY001-001&mtid=NPSTPAY001-001&category=02&url=http://google.com',
+  phonepeUri: 'phonepe://pay?ver=01&mode=15&am=5.00&mam=1.00&cu=INR&pa=npstpay@timecosmos&pn=NPST%20PAY&mc=6012&tr=NPST040120220010&tn=QR%20SIT%20testing&mid=NPSTPAY001&msid=NPSTPAY001-001&mtid=NPSTPAY001-001&category=02&url=http://google.com',
+  paytmUri: 'paytmmp://pay?ver=01&mode=15&am=5.00&mam=1.00&cu=INR&pa=npstpay@timecosmos&pn=NPST%20PAY&mc=6012&tr=NPST040120220010&tn=QR%20SIT%20testing&mid=NPSTPAY001&msid=NPSTPAY001-001&mtid=NPSTPAY001-001&category=02&url=http://google.com',
+  generatedLink: 'https://staging.decf.in/pay/514o5z3m9z',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
+};
+```
+
