@@ -13,35 +13,27 @@ import {
   typedExpandoObject,
   unknown,
 } from '../schema.js';
-import { Client45, client45Schema } from './client45.js';
+import { Client67, client67Schema } from './client67.js';
 
-export interface PayoutApiRequest {
-  client: Client45;
+export interface PayoutApIsRequest1 {
+  client: Client67;
   purpose: string;
   currency: string;
   payoutMethod: string;
-  brandId: string;
   amount: number;
-  successRedirect: string;
-  pendingRedirect: string;
-  failureRedirect: string;
   successCallback: string;
   failureCallback: string;
   additionalProperties?: Record<string, unknown>;
 }
 
-export const payoutApiRequestSchema: Schema<PayoutApiRequest> = lazy(() =>
+export const payoutApIsRequest1Schema: Schema<PayoutApIsRequest1> = lazy(() =>
   typedExpandoObject(
     {
-      client: ['client', client45Schema],
+      client: ['client', client67Schema],
       purpose: ['purpose', string()],
       currency: ['currency', string()],
       payoutMethod: ['payoutMethod', string()],
-      brandId: ['brand_id', string()],
       amount: ['amount', number()],
-      successRedirect: ['success_redirect', string()],
-      pendingRedirect: ['pending_redirect', string()],
-      failureRedirect: ['failure_redirect', string()],
       successCallback: ['success_callback', string()],
       failureCallback: ['failure_callback', string()],
     },

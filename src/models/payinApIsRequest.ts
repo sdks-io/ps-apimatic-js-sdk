@@ -15,7 +15,7 @@ import {
 import { Client8, client8Schema } from './client8.js';
 import { Purchase, purchaseSchema } from './purchase.js';
 
-export interface PayinApiRequest {
+export interface PayinApIsRequest {
   client: Client8;
   purchase: Purchase;
   paymentMethod: string;
@@ -28,7 +28,7 @@ export interface PayinApiRequest {
   additionalProperties?: Record<string, unknown>;
 }
 
-export const payinApiRequestSchema: Schema<PayinApiRequest> = lazy(() =>
+export const payinApIsRequestSchema: Schema<PayinApIsRequest> = lazy(() =>
   typedExpandoObject(
     {
       client: ['client', client8Schema],

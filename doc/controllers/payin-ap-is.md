@@ -1,35 +1,35 @@
-# Pay in API
+# Payin AP Is
 
 ```ts
-const payInApi = new PayInApi(client);
+const payinApIsApi = new PayinApIsApi(client);
 ```
 
 ## Class Name
 
-`PayInApi`
+`PayinApIsApi`
 
 ## Methods
 
-* [Purchases](../../doc/controllers/pay-in-api.md#purchases)
-* [Get Status](../../doc/controllers/pay-in-api.md#get-status)
-* [Create Purchase](../../doc/controllers/pay-in-api.md#create-purchase)
-* [Get Status 1](../../doc/controllers/pay-in-api.md#get-status-1)
-* [Purchases 1](../../doc/controllers/pay-in-api.md#purchases-1)
-* [Purchases 2](../../doc/controllers/pay-in-api.md#purchases-2)
-* [Get Status 2](../../doc/controllers/pay-in-api.md#get-status-2)
-* [Purchases 3](../../doc/controllers/pay-in-api.md#purchases-3)
-* [Get Status 3](../../doc/controllers/pay-in-api.md#get-status-3)
-* [Purchases 4](../../doc/controllers/pay-in-api.md#purchases-4)
-* [Get Status 4](../../doc/controllers/pay-in-api.md#get-status-4)
-* [Payin API](../../doc/controllers/pay-in-api.md#payin-api)
-* [Purchases 5](../../doc/controllers/pay-in-api.md#purchases-5)
-* [Purchases 6](../../doc/controllers/pay-in-api.md#purchases-6)
-* [Get Status 5](../../doc/controllers/pay-in-api.md#get-status-5)
-* [Purchases 7](../../doc/controllers/pay-in-api.md#purchases-7)
-* [Purchases 9](../../doc/controllers/pay-in-api.md#purchases-9)
-* [Purchases 8](../../doc/controllers/pay-in-api.md#purchases-8)
-* [Create Purchase 1](../../doc/controllers/pay-in-api.md#create-purchase-1)
-* [Get Status 6](../../doc/controllers/pay-in-api.md#get-status-6)
+* [Purchases](../../doc/controllers/payin-ap-is.md#purchases)
+* [Get Status](../../doc/controllers/payin-ap-is.md#get-status)
+* [Create Purchase](../../doc/controllers/payin-ap-is.md#create-purchase)
+* [Get Status 1](../../doc/controllers/payin-ap-is.md#get-status-1)
+* [Purchases 1](../../doc/controllers/payin-ap-is.md#purchases-1)
+* [Purchases 2](../../doc/controllers/payin-ap-is.md#purchases-2)
+* [Get Status 2](../../doc/controllers/payin-ap-is.md#get-status-2)
+* [Purchases 3](../../doc/controllers/payin-ap-is.md#purchases-3)
+* [Get Status 3](../../doc/controllers/payin-ap-is.md#get-status-3)
+* [Purchases 4](../../doc/controllers/payin-ap-is.md#purchases-4)
+* [Get Status 4](../../doc/controllers/payin-ap-is.md#get-status-4)
+* [Payin AP Is](../../doc/controllers/payin-ap-is.md#payin-ap-is)
+* [Purchases 5](../../doc/controllers/payin-ap-is.md#purchases-5)
+* [Purchases 6](../../doc/controllers/payin-ap-is.md#purchases-6)
+* [Get Status 5](../../doc/controllers/payin-ap-is.md#get-status-5)
+* [Purchases 7](../../doc/controllers/payin-ap-is.md#purchases-7)
+* [Purchases 9](../../doc/controllers/payin-ap-is.md#purchases-9)
+* [Purchases 8](../../doc/controllers/payin-ap-is.md#purchases-8)
+* [Create Purchase 1](../../doc/controllers/payin-ap-is.md#create-purchase-1)
+* [Get Status 6](../../doc/controllers/payin-ap-is.md#get-status-6)
 
 
 # Purchases
@@ -169,7 +169,7 @@ const body: PurchasesRequest = {
 };
 
 try {
-  const response = await payInApi.purchases(body);
+  const response = await payinApIsApi.purchases(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -420,7 +420,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const purchaseId = 'purchaseId2';
 
 try {
-  const response = await payInApi.getStatus(purchaseId);
+  const response = await payinApIsApi.getStatus(purchaseId);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -739,7 +739,7 @@ const body: CreatePurchaseRequest = {
 };
 
 try {
-  const response = await payInApi.createPurchase(body);
+  const response = await payinApIsApi.createPurchase(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -974,7 +974,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const purchaseId = 'purchaseId2';
 
 try {
-  const response = await payInApi.getStatus1(purchaseId);
+  const response = await payinApIsApi.getStatus1(purchaseId);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -1281,7 +1281,7 @@ const body: PurchasesRequest = {
 };
 
 try {
-  const response = await payInApi.purchases1(body);
+  const response = await payinApIsApi.purchases1(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -1580,7 +1580,7 @@ const body: PurchasesRequest2 = {
 };
 
 try {
-  const response = await payInApi.purchases2(body);
+  const response = await payinApIsApi.purchases2(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -1767,7 +1767,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const purchaseId = 'purchaseId2';
 
 try {
-  const response = await payInApi.getStatus2(purchaseId);
+  const response = await payinApIsApi.getStatus2(purchaseId);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -1996,7 +1996,7 @@ const body: PurchasesRequest3 = {
 };
 
 try {
-  const response = await payInApi.purchases3(body);
+  const response = await payinApIsApi.purchases3(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -2234,7 +2234,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const purchaseId = 'purchaseId2';
 
 try {
-  const response = await payInApi.getStatus3(purchaseId);
+  const response = await payinApIsApi.getStatus3(purchaseId);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -2540,7 +2540,7 @@ const body: PurchasesRequest4 = {
 };
 
 try {
-  const response = await payInApi.purchases4(body);
+  const response = await payinApIsApi.purchases4(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -2639,7 +2639,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const purchaseId = 'purchaseId2';
 
 try {
-  const response = await payInApi.getStatus4(purchaseId);
+  const response = await payinApIsApi.getStatus4(purchaseId);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -2806,7 +2806,7 @@ try {
 ```
 
 
-# Payin API
+# Payin AP Is
 
 ### 1\. Request Payload Structure
 
@@ -2869,8 +2869,8 @@ Once you parse `payInDetails` from the response:
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async payinApi(
-  body: PayinApiRequest,
+async payinApIs(
+  body: PayinApIsRequest,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<Success11>>
 ```
@@ -2879,7 +2879,7 @@ async payinApi(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`PayinApiRequest`](../../doc/models/payin-api-request.md) | Body, Required | - |
+| `body` | [`PayinApIsRequest`](../../doc/models/payin-ap-is-request.md) | Body, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 ## Response Type
@@ -2891,7 +2891,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ## Example Usage
 
 ```ts
-const body: PayinApiRequest = {
+const body: PayinApIsRequest = {
   client: {
     email: 'ashishm.21190@gmail.com',
     streetAddress: 'test test',
@@ -2921,7 +2921,7 @@ const body: PayinApiRequest = {
 };
 
 try {
-  const response = await payInApi.payinApi(body);
+  const response = await payinApIsApi.payinApIs(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -3230,7 +3230,7 @@ const body: PurchasesRequest5 = {
 };
 
 try {
-  const response = await payInApi.purchases5(body);
+  const response = await payinApIsApi.purchases5(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -3508,7 +3508,7 @@ const body: PurchasesRequest8 = {
 };
 
 try {
-  const response = await payInApi.purchases6(body);
+  const response = await payinApIsApi.purchases6(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -3759,7 +3759,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const purchaseId = 'purchaseId2';
 
 try {
-  const response = await payInApi.getStatus5(purchaseId);
+  const response = await payinApIsApi.getStatus5(purchaseId);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -3946,7 +3946,7 @@ try {
 
 The API endpoint [/v1/purchases](https://api.paysecure.net/api/v1/purchases) is a POST request used to create a new purchase. The request body should contain the client information including email, address, and phone, the purchase details such as currency and products, the payment method, and various callback and redirect URLs.
 
-**Final Steps for Payin API Integration**
+**Final Steps for Payin APIs Integration**
 
 1. **Set Up Authentication & Headers**
    
@@ -3994,7 +3994,7 @@ The API endpoint [/v1/purchases](https://api.paysecure.net/api/v1/purchases) is 
        
        - failure_redirect (HTTPS URL after failure)
 
-3. **Invoke the Payin API**
+3. **Invoke the Payin APIs**
    
    - Send the JSON payload to [https://api.paysecure.net/v1/purchases](https://api.paysecure.net/v1/purchases)
    
@@ -4104,7 +4104,7 @@ const body: PurchasesRequest9 = {
 };
 
 try {
-  const response = await payInApi.purchases7(body);
+  const response = await payinApIsApi.purchases7(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -4351,7 +4351,7 @@ const body: PurchasesRequest3 = {
 };
 
 try {
-  const response = await payInApi.purchases9(body);
+  const response = await payinApIsApi.purchases9(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -4574,7 +4574,7 @@ const body: PurchasesRequest11 = {
 };
 
 try {
-  const response = await payInApi.purchases8(body);
+  const response = await payinApIsApi.purchases8(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -4913,7 +4913,7 @@ const body: CreatePurchaseRequest2 = {
 };
 
 try {
-  const response = await payInApi.createPurchase1(body);
+  const response = await payinApIsApi.createPurchase1(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -5012,7 +5012,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const purchaseId = 'purchaseId2';
 
 try {
-  const response = await payInApi.getStatus6(purchaseId);
+  const response = await payinApIsApi.getStatus6(purchaseId);
 
   // Extracting fully parsed response body.
   console.log(response.result);

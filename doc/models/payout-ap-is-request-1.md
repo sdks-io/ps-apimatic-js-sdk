@@ -1,11 +1,11 @@
 
-# Payout Api Request 1
+# Payout Ap Is Request 1
 
 *This model accepts additional fields of type unknown.*
 
 ## Structure
 
-`PayoutApiRequest1`
+`PayoutApIsRequest1`
 
 ## Fields
 
@@ -23,9 +23,9 @@
 ## Example
 
 ```ts
-import { PayoutApiRequest1 } from 'ps-apimatic-sdk';
+import { PayoutApIsRequest1 } from 'ps-apimatic-sdk';
 
-const payoutApiRequest1: PayoutApiRequest1 = {
+const payoutApIsRequest1: PayoutApIsRequest1 = {
   client: {
     email: 'akshayadeepsinghal@gmail.com',
     country: 'AU',

@@ -22,7 +22,7 @@ import { BaseApi } from './baseApi.js';
 
 export class PayinApi extends BaseApi {
   /**
-   * ### **Payin API**
+   * ### **Payin APIs**
    *
    * <img src="https://content.pstmn.io/e448df41-3cb5-4b2a-9dc5-f961d9048bff/dW5uYW1lZC0yLnBuZw==" alt=""
    * height="301" width="800">

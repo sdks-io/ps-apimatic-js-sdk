@@ -1,30 +1,30 @@
-# Pay Out API
+# Payout AP Is
 
 ```ts
-const payOutApi = new PayOutApi(client);
+const payoutApIsApi = new PayoutApIsApi(client);
 ```
 
 ## Class Name
 
-`PayOutApi`
+`PayoutApIsApi`
 
 ## Methods
 
-* [Create Pay Out](../../doc/controllers/pay-out-api.md#create-pay-out)
-* [Get Status](../../doc/controllers/pay-out-api.md#get-status)
-* [Create Pay Out 1](../../doc/controllers/pay-out-api.md#create-pay-out-1)
-* [Get Status 1](../../doc/controllers/pay-out-api.md#get-status-1)
-* [Create Payout 2](../../doc/controllers/pay-out-api.md#create-payout-2)
-* [Create Pay Out 3](../../doc/controllers/pay-out-api.md#create-pay-out-3)
-* [Get Status 2](../../doc/controllers/pay-out-api.md#get-status-2)
-* [Create Pay Out 11](../../doc/controllers/pay-out-api.md#create-pay-out-11)
-* [Get Status 3](../../doc/controllers/pay-out-api.md#get-status-3)
-* [Payout API](../../doc/controllers/pay-out-api.md#payout-api)
-* [Payout](../../doc/controllers/pay-out-api.md#payout)
-* [Payout API 1](../../doc/controllers/pay-out-api.md#payout-api-1)
-* [New Request](../../doc/controllers/pay-out-api.md#new-request)
-* [Create Pay Out 21](../../doc/controllers/pay-out-api.md#create-pay-out-21)
-* [Get Status 4](../../doc/controllers/pay-out-api.md#get-status-4)
+* [Create Pay Out](../../doc/controllers/payout-ap-is.md#create-pay-out)
+* [Get Status](../../doc/controllers/payout-ap-is.md#get-status)
+* [Create Pay Out 1](../../doc/controllers/payout-ap-is.md#create-pay-out-1)
+* [Get Status 1](../../doc/controllers/payout-ap-is.md#get-status-1)
+* [Create Payout 2](../../doc/controllers/payout-ap-is.md#create-payout-2)
+* [Create Pay Out 3](../../doc/controllers/payout-ap-is.md#create-pay-out-3)
+* [Get Status 2](../../doc/controllers/payout-ap-is.md#get-status-2)
+* [Create Pay Out 11](../../doc/controllers/payout-ap-is.md#create-pay-out-11)
+* [Get Status 3](../../doc/controllers/payout-ap-is.md#get-status-3)
+* [Payout AP Is](../../doc/controllers/payout-ap-is.md#payout-ap-is)
+* [Payout](../../doc/controllers/payout-ap-is.md#payout)
+* [Payout API S1](../../doc/controllers/payout-ap-is.md#payout-api-s1)
+* [New Request](../../doc/controllers/payout-ap-is.md#new-request)
+* [Create Pay Out 21](../../doc/controllers/payout-ap-is.md#create-pay-out-21)
+* [Get Status 4](../../doc/controllers/payout-ap-is.md#get-status-4)
 
 
 # Create Pay Out
@@ -101,7 +101,7 @@ const body: CreatePayOutRequest = {
 };
 
 try {
-  const response = await payOutApi.createPayOut(
+  const response = await payoutApIsApi.createPayOut(
     brandId,
     body
   );
@@ -339,7 +339,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const payoutId = 'payoutId4';
 
 try {
-  const response = await payOutApi.getStatus(payoutId);
+  const response = await payoutApIsApi.getStatus(payoutId);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -486,7 +486,7 @@ const body: CreatePayOutRequest1 = {
 };
 
 try {
-  const response = await payOutApi.createPayOut1(
+  const response = await payoutApIsApi.createPayOut1(
     brandId,
     body
   );
@@ -605,7 +605,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const payoutId = 'payoutId4';
 
 try {
-  const response = await payOutApi.getStatus1(payoutId);
+  const response = await payoutApIsApi.getStatus1(payoutId);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -750,7 +750,7 @@ const body: CreatePayOutRequest1 = {
 };
 
 try {
-  const response = await payOutApi.createPayout2(
+  const response = await payoutApIsApi.createPayout2(
     brandId,
     body
   );
@@ -907,7 +907,7 @@ const body: CreatePayOutRequest3 = {
 };
 
 try {
-  const response = await payOutApi.createPayOut3(body);
+  const response = await payoutApIsApi.createPayOut3(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -1027,7 +1027,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const payoutId = 'payoutId4';
 
 try {
-  const response = await payOutApi.getStatus2(payoutId);
+  const response = await payoutApIsApi.getStatus2(payoutId);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -1163,7 +1163,7 @@ const body: CreatePayOutRequest4 = {
 };
 
 try {
-  const response = await payOutApi.createPayOut11(body);
+  const response = await payoutApIsApi.createPayOut11(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -1278,7 +1278,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const payoutId = 'payoutId4';
 
 try {
-  const response = await payOutApi.getStatus3(payoutId);
+  const response = await payoutApIsApi.getStatus3(payoutId);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -1357,9 +1357,9 @@ try {
 ```
 
 
-# Payout API
+# Payout AP Is
 
-**Payout API Integration (SPEI)**
+**Payout APIs Integration (SPEI)**
 
 ---
 
@@ -1531,8 +1531,8 @@ jsonCopy{
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async payoutApi(
-  body: PayoutApiRequest,
+async payoutApIs(
+  body: PayoutApIsRequest,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<Success12>>
 ```
@@ -1541,7 +1541,7 @@ async payoutApi(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`PayoutApiRequest`](../../doc/models/payout-api-request.md) | Body, Required | - |
+| `body` | [`PayoutApIsRequest`](../../doc/models/payout-ap-is-request.md) | Body, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 ## Response Type
@@ -1553,7 +1553,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ## Example Usage
 
 ```ts
-const body: PayoutApiRequest = {
+const body: PayoutApIsRequest = {
   client: {
     email: 'ashishm.21190@gmail.com',
     country: 'MX',
@@ -1575,7 +1575,7 @@ const body: PayoutApiRequest = {
 };
 
 try {
-  const response = await payOutApi.payoutApi(body);
+  const response = await payoutApIsApi.payoutApIs(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -1722,7 +1722,7 @@ const body: PayoutRequest2 = {
 };
 
 try {
-  const response = await payOutApi.payout(body);
+  const response = await payoutApIsApi.payout(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -1752,7 +1752,7 @@ try {
 ```
 
 
-# Payout API 1
+# Payout API S1
 
 ### Create Payout
 
@@ -1791,8 +1791,8 @@ The response will contain the details of the initiated payout transaction.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async payoutApi1(
-  body: PayoutApiRequest1,
+async payoutApIs1(
+  body: PayoutApIsRequest1,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<NewRequest>>
 ```
@@ -1801,7 +1801,7 @@ async payoutApi1(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`PayoutApiRequest1`](../../doc/models/payout-api-request-1.md) | Body, Required | - |
+| `body` | [`PayoutApIsRequest1`](../../doc/models/payout-ap-is-request-1.md) | Body, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 ## Response Type
@@ -1813,7 +1813,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ## Example Usage
 
 ```ts
-const body: PayoutApiRequest1 = {
+const body: PayoutApIsRequest1 = {
   client: {
     email: 'akshayadeepsinghal@gmail.com',
     country: 'AU',
@@ -1830,7 +1830,7 @@ const body: PayoutApiRequest1 = {
 };
 
 try {
-  const response = await payOutApi.payoutApi1(body);
+  const response = await payoutApIsApi.payoutApIs1(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -1994,7 +1994,7 @@ const body: NewRequestRequest = {
 };
 
 try {
-  const response = await payOutApi.newRequest(body);
+  const response = await payoutApIsApi.newRequest(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -2155,7 +2155,7 @@ const body: CreatePayOutRequest6 = {
 };
 
 try {
-  const response = await payOutApi.createPayOut21(body);
+  const response = await payoutApIsApi.createPayOut21(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);
@@ -2288,7 +2288,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 const payoutId = 'payoutId4';
 
 try {
-  const response = await payOutApi.getStatus4(payoutId);
+  const response = await payoutApIsApi.getStatus4(payoutId);
 
   // Extracting fully parsed response body.
   console.log(response.result);

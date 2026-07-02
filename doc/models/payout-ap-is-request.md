@@ -1,20 +1,22 @@
 
-# Payin Api Request
+# Payout Ap Is Request
 
 *This model accepts additional fields of type unknown.*
 
 ## Structure
 
-`PayinApiRequest`
+`PayoutApIsRequest`
 
 ## Fields
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `client` | [`Client8`](../../doc/models/client-8.md) | Required | - |
-| `purchase` | [`Purchase`](../../doc/models/purchase.md) | Required | - |
-| `paymentMethod` | `string` | Required | - |
+| `client` | [`Client45`](../../doc/models/client-45.md) | Required | - |
+| `purpose` | `string` | Required | - |
+| `currency` | `string` | Required | - |
+| `payoutMethod` | `string` | Required | - |
 | `brandId` | `string` | Required | - |
+| `amount` | `number` | Required | - |
 | `successRedirect` | `string` | Required | - |
 | `pendingRedirect` | `string` | Required | - |
 | `failureRedirect` | `string` | Required | - |
@@ -25,39 +27,25 @@
 ## Example
 
 ```ts
-import { PayinApiRequest } from 'ps-apimatic-sdk';
+import { PayoutApIsRequest } from 'ps-apimatic-sdk';
 
-const payinApiRequest: PayinApiRequest = {
+const payoutApIsRequest: PayoutApIsRequest = {
   client: {
     email: 'ashishm.21190@gmail.com',
-    streetAddress: 'test test',
-    city: '123',
-    fullName: 'Test test',
-    zipCode: '234567',
     country: 'MX',
-    stateCode: 'ca',
-    phone: '9999999999',
+    phone: '+14377717874',
+    fullName: 'MARCO ANTONIO FERNANDEZ RAMIREZ',
+    stateCode: 'test',
+    speiClabe: '012180027944986158',
     additionalProperties: {
       'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
     },
   },
-  purchase: {
-    currency: 'MXN',
-    products: [
-      {
-        name: 'dk',
-        price: '100',
-        additionalProperties: {
-          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-        },
-      }
-    ],
-    additionalProperties: {
-      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-    },
-  },
-  paymentMethod: 'SPEI',
+  purpose: 'payout',
+  currency: 'MXN',
+  payoutMethod: 'PAYOUT-SPEI',
   brandId: '{{merchant_brand_id}}',
+  amount: 20,
   successRedirect: 'https://your.success.redirect.com',
   pendingRedirect: 'https://your.pending.redirect.com',
   failureRedirect: 'https://your.failure.redirect.com',

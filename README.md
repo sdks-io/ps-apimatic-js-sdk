@@ -67,25 +67,25 @@ Use these headers on every API call unless noted.
 Run the following command from your project directory to install the package from npm:
 
 ```bash
-npm install ps-apimatic-sdk@0.0.1
+npm install ps-apimatic-sdk@0.0.2
 ```
 
-For additional package details, see the [Npm page for the ps-apimatic-sdk@0.0.1 npm](https://www.npmjs.com/package/ps-apimatic-sdk/v/0.0.1).
+For additional package details, see the [Npm page for the ps-apimatic-sdk@0.0.2 npm](https://www.npmjs.com/package/ps-apimatic-sdk/v/0.0.2).
 
 ## Initialize the API Client
 
-**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/client.md)
+**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/client.md)
 
 The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| environment | [`Environment`](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/README.md#environments) | The API environment. <br> **Default: `Environment.Production`** |
+| environment | [`Environment`](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/README.md#environments) | The API environment. <br> **Default: `Environment.Production`** |
 | timeout | `number` | Timeout for API calls.<br>*Default*: `30000` |
-| httpClientOptions | [`Partial<HttpClientOptions>`](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/http-client-options.md) | Stable configurable http client options. |
+| httpClientOptions | [`Partial<HttpClientOptions>`](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/http-client-options.md) | Stable configurable http client options. |
 | unstableHttpClientOptions | `any` | Unstable configurable http client options. |
-| logging | [`PartialLoggingOptions`](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/partial-logging-options.md) | Logging Configuration to enable logging |
-| bearerAuthCredentials | [`BearerAuthCredentials`](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/auth/oauth-2-bearer-token.md) | The credential object for bearerAuth |
+| logging | [`PartialLoggingOptions`](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/partial-logging-options.md) | Logging Configuration to enable logging |
+| bearerAuthCredentials | [`BearerAuthCredentials`](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/auth/oauth-2-bearer-token.md) | The credential object for bearerAuth |
 
 The API client can be initialized as follows:
 
@@ -129,7 +129,7 @@ const fileContent = fs.readFileSync(absolutePath, 'utf-8');
 const client = Client.fromJsonConfig(fileContent);
 ```
 
-See the [Configuration-Based Client Initialization](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/configuration-based-client-initialization.md) section for details.
+See the [Configuration-Based Client Initialization](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/configuration-based-client-initialization.md) section for details.
 
 ### Environment-Based Client Initialization
 
@@ -151,7 +151,7 @@ if (fs.existsSync(absolutePath)) {
 const client = Client.fromEnvironment(process.env);
 ```
 
-See the [Environment-Based Client Initialization](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/environment-based-client-initialization.md) section for details.
+See the [Environment-Based Client Initialization](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/environment-based-client-initialization.md) section for details.
 
 ## Environments
 
@@ -167,47 +167,47 @@ The SDK can be configured to use a different environment for making API calls. A
 
 This API uses the following authentication schemes.
 
-* [`bearer (OAuth 2 Bearer token)`](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/auth/oauth-2-bearer-token.md)
+* [`bearer (OAuth 2 Bearer token)`](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/auth/oauth-2-bearer-token.md)
 
 ## List of APIs
 
-* [Pay in API](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/pay-in-api.md)
-* [Pay Out API](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/pay-out-api.md)
-* [Get Balance API](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/get-balance-api.md)
-* [Refund API](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/refund-api.md)
-* [🌎 Paypal Wallet](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/paypal-wallet.md)
-* [💳 Virtual Cards Payout](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/virtual-cards-payout.md)
-* [Trust Score](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/trust-score.md)
-* [Cashier AP Is](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/cashier-ap-is.md)
-* [Transaction Reporting](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/transaction-reporting.md)
-* [Get Balance API V2-Orchestration](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/get-balance-api-v2-orchestration.md)
-* [Global Collection](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/global-collection.md)
-* [Payout Manual Review](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/payout-manual-review.md)
-* [AP Is](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/ap-is.md)
-* [Payout](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/payout.md)
-* [Payin](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/payin.md)
-* [API](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/controllers/api.md)
+* [Payin AP Is](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/payin-ap-is.md)
+* [Payout AP Is](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/payout-ap-is.md)
+* [Get Balance API](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/get-balance-api.md)
+* [Refund API](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/refund-api.md)
+* [🌎 Paypal Wallet](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/paypal-wallet.md)
+* [💳 Virtual Cards Payout](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/virtual-cards-payout.md)
+* [Trust Score](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/trust-score.md)
+* [Cashier AP Is](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/cashier-ap-is.md)
+* [Transaction Reporting](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/transaction-reporting.md)
+* [Get Balance API V2-Orchestration](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/get-balance-api-v2-orchestration.md)
+* [Global Collection](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/global-collection.md)
+* [Payout Manual Review](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/payout-manual-review.md)
+* [AP Is](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/ap-is.md)
+* [Payout](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/payout.md)
+* [Payin](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/payin.md)
+* [API](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/controllers/api.md)
 
 ## SDK Infrastructure
 
 ### Configuration
 
-* [HttpClientOptions](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/http-client-options.md)
-* [RetryConfiguration](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/retry-configuration.md)
-* [ProxySettings](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/proxy-settings.md)
-* [Configuration-Based Client Initialization](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/configuration-based-client-initialization.md)
-* [Environment-Based Client Initialization](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/environment-based-client-initialization.md)
-* [PartialLoggingOptions](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/partial-logging-options.md)
-* [PartialRequestLoggingOptions](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/partial-request-logging-options.md)
-* [PartialResponseLoggingOptions](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/partial-response-logging-options.md)
-* [LoggerInterface](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/logger-interface.md)
+* [HttpClientOptions](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/http-client-options.md)
+* [RetryConfiguration](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/retry-configuration.md)
+* [ProxySettings](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/proxy-settings.md)
+* [Configuration-Based Client Initialization](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/configuration-based-client-initialization.md)
+* [Environment-Based Client Initialization](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/environment-based-client-initialization.md)
+* [PartialLoggingOptions](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/partial-logging-options.md)
+* [PartialRequestLoggingOptions](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/partial-request-logging-options.md)
+* [PartialResponseLoggingOptions](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/partial-response-logging-options.md)
+* [LoggerInterface](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/logger-interface.md)
 
 ### HTTP
 
-* [HttpRequest](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/http-request.md)
+* [HttpRequest](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/http-request.md)
 
 ### Utilities
 
-* [ApiResponse](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/api-response.md)
-* [ApiError](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.1/doc/api-error.md)
+* [ApiResponse](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/api-response.md)
+* [ApiError](https://www.github.com/sdks-io/ps-apimatic-js-sdk/tree/0.0.2/doc/api-error.md)
 
